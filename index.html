@@ -14,7 +14,7 @@
 <title>Come to Hokkaido</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Noto+Serif+JP:wght@500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Noto+Serif+JP:wght@500;700&display=swap">
 <style>
 :root{
   --night:#0E172A;
@@ -44,10 +44,10 @@ a{color:inherit}
 h1,h2,h3{margin:0;text-wrap:balance}
 p{margin:0}
 .disp{font-family:var(--display);font-stretch:62%;font-variation-settings:"wdth" 62;font-weight:800;text-transform:uppercase;line-height:.9;letter-spacing:-.003em}
-.label{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase}
+.label{font-family:var(--display);font-stretch:100%;font-variation-settings:"wdth" 100;font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
 .jp{font-family:var(--jp);font-weight:500}
 
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:600 13px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:17px 24px;border:1.5px solid currentColor;background:transparent;color:inherit;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:700 14px/1 var(--display);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:17px 24px;border:1.5px solid currentColor;background:transparent;color:inherit;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
 .btn.red{background:var(--red);border-color:var(--red);color:var(--snow)}
 .btn.red:hover{background:#A3241E;border-color:#A3241E}
 .btn.ghost:hover{background:var(--snow);color:var(--ink);border-color:var(--snow)}
@@ -66,7 +66,7 @@ p{margin:0}
 .hero h1{font-size:clamp(58px,11vw,168px);margin-top:18px;max-width:9.5em}
 .hero h1 span{display:block}
 .hero .dates{margin-top:26px;font-size:clamp(19px,2vw,24px)}
-.hero .kill{margin-top:10px;font-style:italic;font-size:clamp(19px,2vw,24px);color:var(--lamp)}
+.hero .kill{margin-top:10px;font-style:italic;font-size:clamp(19px,2vw,24px);color:var(--ice)}
 .hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
 .hero-art{position:relative;z-index:1;margin-top:clamp(-40px,-4vw,-10px)}
 .hero-art svg{display:block;width:100%;height:auto}
@@ -83,23 +83,29 @@ section{padding-block:clamp(72px,10vw,136px)}
 
 /* house */
 .house{background:var(--snow)}
-.house-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,5vw,72px);align-items:center}
-.house-grid > *{min-width:0}
-.house figure{margin:0}
-.house figure svg{display:block;width:100%;height:auto}
-.facts{margin-top:28px;border-top:1.5px solid var(--ink)}
-.facts div{display:grid;grid-template-columns:130px 1fr;gap:16px;padding-block:13px;border-bottom:1px solid var(--rule)}
-.facts dt{padding-top:5px}
-.facts dd{margin:0;font-size:18px}
-.facts .fine{display:block;font-size:14.5px;color:var(--ink-soft);font-style:italic;margin-top:2px}
-.chef{margin-top:22px;font-style:italic;font-size:21px}
-.nearby{margin-top:clamp(48px,7vw,80px);display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(24px,4vw,56px);padding-top:clamp(28px,4vw,40px);border-top:1.5px solid var(--ink)}
-.nearby > *{min-width:0}
-.nearby h3{font-size:clamp(34px,4.4vw,58px)}
-.nearby p{font-size:20px;line-height:1.5}
-.nearby p + p{margin-top:14px}
-.nearby .quiet{font-style:italic;color:var(--ink-soft);font-size:18px}
-@media (max-width:860px){.house-grid,.nearby{grid-template-columns:1fr}}
+.stay{display:grid;grid-template-columns:1fr auto 1fr;gap:clamp(14px,2vw,28px);margin-top:clamp(32px,5vw,52px);align-items:stretch}
+.stay > *{min-width:0}
+.opt{background:var(--paper);border:1.5px solid var(--ink);display:flex;flex-direction:column}
+.opt figure{margin:0;border-bottom:1.5px solid var(--ink)}
+.opt figure svg{display:block;width:100%;height:auto;aspect-ratio:600/470}
+.opt-body{padding:clamp(20px,2.6vw,32px);display:flex;flex-direction:column;flex:1}
+.opt-num{color:var(--red)}
+.opt h3{font-size:clamp(36px,4vw,54px);margin-top:8px}
+.opt-sub{margin-top:8px;font-size:19px}
+.facts{margin-top:22px;border-top:1.5px solid var(--ink)}
+.facts div{display:grid;grid-template-columns:78px 1fr;gap:14px;padding-block:12px;border-bottom:1px solid var(--rule)}
+.facts dt{padding-top:3px}
+.facts dd{margin:0;font-size:17.5px}
+.facts .fine{display:block;font-size:14.5px;color:var(--ink-soft);font-style:italic;margin-top:4px}
+.chef{margin-top:auto;padding-top:20px;font-style:italic;font-size:19px}
+.or{display:flex;align-items:center;justify-content:center}
+.or span{font-family:var(--display);font-stretch:62%;font-variation-settings:"wdth" 62;font-weight:800;text-transform:uppercase;font-size:clamp(40px,5vw,64px);color:var(--red);line-height:1}
+.either{margin-top:clamp(28px,4vw,44px);display:grid;grid-template-columns:auto repeat(3,1fr);gap:0;border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink)}
+.either > *{padding:18px 20px 18px 0;min-width:0}
+.either-k{color:var(--red);padding-top:22px;padding-right:28px}
+.either strong{font-family:var(--display);font-stretch:80%;font-variation-settings:"wdth" 80;font-weight:700;font-size:19px;text-transform:uppercase}
+.either p{font-size:17px;margin-top:4px}
+@media (max-width:860px){.stay{grid-template-columns:1fr}.or{padding-block:4px}.either{grid-template-columns:1fr}.either > *{padding:12px 0;border-bottom:1px solid var(--rule)}.either > *:last-child{border-bottom:none}}
 @media (max-width:480px){.facts div{grid-template-columns:1fr;gap:2px}}
 
 /* do */
@@ -119,15 +125,15 @@ section{padding-block:clamp(72px,10vw,136px)}
 
 /* birthday + week (night) */
 .night{background:var(--night);color:var(--snow)}
-.night .eyebrow{color:var(--lamp)}
+.night .eyebrow{color:var(--ice)}
 .bday-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,96px)}
 .bday-grid > *{min-width:0}
 .night .big-copy p{max-width:22em}
-.hit{margin-top:clamp(24px,3vw,34px);font-size:clamp(21px,2.3vw,28px);line-height:1.4;color:var(--lamp);max-width:22em}
+.hit{margin-top:clamp(24px,3vw,34px);font-size:clamp(21px,2.3vw,28px);line-height:1.4;color:var(--snow);font-style:italic;max-width:22em}
 .day{list-style:none;margin:10px 0 0;padding:0;border-top:1px solid rgba(247,243,234,.25)}
 .day li{display:grid;grid-template-columns:78px 1fr;gap:16px;padding-block:14px;border-bottom:1px solid rgba(247,243,234,.14);font-size:19px;align-items:baseline}
-.day time{font:500 16px/1 var(--mono);font-variant-numeric:tabular-nums;opacity:.7}
-.day li.late{color:var(--lamp)}
+.day time{font:600 17px/1 var(--display);font-variant-numeric:tabular-nums;opacity:.7}
+.day li.late{color:var(--ice);font-style:italic}
 .day li.late time{opacity:1}
 .day-note{margin-top:14px;font-size:15px;opacity:.65;font-style:italic}
 @media (max-width:860px){.bday-grid{grid-template-columns:1fr}}
@@ -160,9 +166,9 @@ form{display:flex;flex-direction:column}
 .row{display:flex;flex-wrap:wrap;gap:16px 28px}
 .stepper{display:flex;flex-direction:column;gap:8px}
 .stepper .ctl{display:flex;border:1.5px solid var(--ink);background:var(--paper);width:max-content}
-.stepper button{width:44px;height:46px;border:none;background:transparent;font:600 20px/1 var(--mono);color:var(--ink);cursor:pointer}
+.stepper button{width:44px;height:46px;border:none;background:transparent;font:700 20px/1 var(--display);color:var(--ink);cursor:pointer}
 .stepper button:hover{background:var(--ink);color:var(--snow)}
-.stepper input{width:56px;height:46px;border:none;border-inline:1px solid var(--rule);text-align:center;font:600 20px/1 var(--mono);background:var(--snow);color:var(--ink);-moz-appearance:textfield}
+.stepper input{width:56px;height:46px;border:none;border-inline:1px solid var(--rule);text-align:center;font:700 20px/1 var(--display);background:var(--snow);color:var(--ink);-moz-appearance:textfield}
 .stepper input::-webkit-inner-spin-button{-webkit-appearance:none}
 .field{display:flex;flex-direction:column;gap:8px;flex:1;min-width:220px}
 .field input,.field textarea{font:18px/1.45 var(--serif);color:var(--ink);background:var(--paper);border:1.5px solid var(--rule);padding:12px 14px;width:100%}
@@ -171,13 +177,13 @@ form{display:flex;flex-direction:column}
 .field input::placeholder,.field textarea::placeholder{color:#8B909B;font-style:italic}
 .send{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
 .send .btn{font-size:14px;padding:18px 40px}
-.err{color:var(--red);font:500 13px/1.4 var(--mono);margin-top:12px;min-height:1.4em}
+.err{color:var(--red);font:15px/1.4 var(--serif);margin-top:12px;min-height:1.4em}
 .q.bad legend,.q.bad .qlabel{color:var(--red)}
 .done h3{font-size:clamp(40px,5vw,64px)}
 .done p{font-size:20px;margin-top:14px;max-width:28em}
 .done .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
 .done .tiny{font-size:15px;color:var(--ink-soft);font-style:italic;margin-top:18px}
-.toast{font:500 12.5px/1.4 var(--mono);color:var(--pine);min-height:1.4em;margin-top:10px}
+.toast{font:15px/1.4 var(--serif);color:var(--ink);min-height:1.4em;margin-top:10px}
 
 /* faq */
 .faq{display:grid;grid-template-columns:repeat(2,1fr);gap:0 clamp(28px,5vw,72px);margin-top:clamp(28px,4vw,48px)}
@@ -192,7 +198,7 @@ form{display:flex;flex-direction:column}
 .end{background:var(--night);color:var(--snow);padding-block:clamp(80px,11vw,140px) 56px;text-align:left;position:relative;overflow:hidden}
 .end .disp{font-size:clamp(56px,10vw,150px)}
 .end .disp span{display:block}
-.end .disp span:last-child{color:var(--lamp)}
+.end .disp span:last-child{color:var(--ice)}
 .end .hope{margin-top:30px;font-size:clamp(22px,2.4vw,30px);font-style:italic}
 .end .tiny{margin-top:clamp(56px,8vw,96px);font-size:14px;opacity:.55;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .end .tiny a{text-decoration:underline;text-underline-offset:3px}
@@ -210,7 +216,7 @@ form{display:flex;flex-direction:column}
   <div class="wrap hero-text">
     <p class="where"><span class="label">Niseko / Hirafu</span><span class="jp">北海道</span></p>
     <h1 class="disp"><span>I'm turning 35.</span><span>Come to Hokkaido.</span></h1>
-    <p class="dates">First or second week of February.</p>
+    <p class="dates">The birthday is in December. The celebration is in Hokkaido, first or second week of February.</p>
     <p class="kill">35 is not midlife unless the second half goes badly.</p>
     <div class="cta">
       <a class="btn red" href="#which-week">Tell me which week</a>
@@ -273,7 +279,7 @@ form{display:flex;flex-direction:column}
   <div class="wrap">
     <span class="label eyebrow">The plan</span>
     <div class="big-copy">
-      <p>I'm turning 35 in February and I want a bunch of people I love in Hokkaido for a week.</p>
+      <p>I turn 35 in December, and in February I want a bunch of people I love in Hokkaido for a week.</p>
       <p>A month ago you all flew in for my wedding. I've chosen to interpret that as a trend, not a favour.</p>
       <p>Friends, partners, kids, families. Ski if you want. Don't if you don't. Eat far too much, sit in hot springs, drink things.</p>
       <p>The trip is happening. I just need to know which week before I book the house.</p>
@@ -284,9 +290,14 @@ form{display:flex;flex-direction:column}
 
 <section class="house" id="house">
   <div class="wrap">
-    <div class="house-grid">
-      <figure aria-hidden="true">
-        <svg viewBox="0 0 600 470">
+    <span class="label eyebrow">Where to stay</span>
+    <h2 class="disp h2">Chalet or hotel. Your call.</h2>
+    <p class="aside" style="margin-top:18px">Two ways to stay. Pick whichever works for you. Either way, you're part of everything.</p>
+
+    <div class="stay">
+      <article class="opt">
+        <figure aria-hidden="true">
+          <svg viewBox="0 0 600 470">
           <defs>
             <radialGradient id="hglow" cx=".5" cy=".6"><stop offset="0" stop-color="#F0B04E" stop-opacity=".5"/><stop offset="1" stop-color="#F0B04E" stop-opacity="0"/></radialGradient>
             <linearGradient id="hsky" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#0A1222"/><stop offset="1" stop-color="#22355A"/></linearGradient>
@@ -328,27 +339,73 @@ form{display:flex;flex-direction:column}
           <path d="M150 378 C220 372 380 372 450 378 L450 388 L150 388 Z" fill="#DCE5EC"/>
           <path d="M40 420 C160 410 300 432 440 420 C520 414 570 420 600 424" stroke="#BFD0DC" stroke-width="2" fill="none"/>
         </svg>
-      </figure>
+        </figure>
+        <div class="opt-body">
+          <span class="label opt-num">Option 1</span>
+          <h3 class="disp">The chalet</h3>
+          <p class="opt-sub">Stay under one roof with the group.</p>
+          <dl class="facts">
+            <div><dt class="label">Who</dt><dd>Around 10–15 of us</dd></div>
+            <div><dt class="label">Cost</dt><dd>Roughly USD 2,500 per person, full week<span class="fine">Current estimate. Depends on the final chalet, how many of us are in it, and the dates. I should not be left alone with chalet websites.</span></dd></div>
+            <div><dt class="label">Food</dt><dd>Possibly a private chef or catering</dd></div>
+          </dl>
+          <p class="chef">Private chef: not confirmed. I regret discovering the option.</p>
+        </div>
+      </article>
 
-      <div>
-        <span class="label eyebrow">The house</span>
-        <h2 class="disp h2">A big chalet in Hirafu.</h2>
-        <dl class="facts">
-          <div><dt class="label">Sleeps</dt><dd>Around 10–15 people</dd></div>
-          <div><dt class="label">Where</dt><dd>Niseko / Hirafu</dd></div>
-          <div><dt class="label">Cost</dt><dd>Roughly USD 2,500 per person for the full week<span class="fine">Current estimate. Depends on the final chalet, how many of us are in it, and the dates. I should not be left alone with chalet websites.</span></dd></div>
-          <div><dt class="label">Food</dt><dd>Possibly a private chef or catering</dd></div>
-        </dl>
-        <p class="chef">Private chef: not confirmed. I regret discovering the option.</p>
-      </div>
+      <div class="or" aria-hidden="true"><span>or</span></div>
+
+      <article class="opt">
+        <figure aria-hidden="true">
+          <svg viewBox="0 0 600 470">
+          <defs>
+            <linearGradient id="hsky2" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#0A1222"/><stop offset="1" stop-color="#22355A"/></linearGradient>
+            <radialGradient id="hglow2" cx=".5" cy=".7"><stop offset="0" stop-color="#F0B04E" stop-opacity=".35"/><stop offset="1" stop-color="#F0B04E" stop-opacity="0"/></radialGradient>
+          </defs>
+          <rect width="600" height="470" fill="url(#hsky2)"/>
+          <g fill="#F7F3EA" opacity=".8"><circle cx="70" cy="40" r="1.6"/><circle cx="170" cy="90" r="1.2"/><circle cx="460" cy="50" r="1.4"/><circle cx="550" cy="120" r="1"/><circle cx="320" cy="30" r="1.2"/></g>
+          <path d="M0 330 C140 300 260 312 340 322 C440 334 520 304 600 312 L600 470 L0 470 Z" fill="#16243E"/>
+          <circle cx="300" cy="330" r="240" fill="url(#hglow2)"/>
+          <!-- three buildings -->
+          <rect x="60" y="200" width="150" height="180" fill="#0E172A"/><path d="M52 204 L218 204 L210 190 L60 190 Z" fill="#F7F3EA"/>
+          <rect x="230" y="150" width="140" height="230" fill="#131D30"/><path d="M222 154 L378 154 L370 138 L230 138 Z" fill="#F7F3EA"/>
+          <rect x="390" y="220" width="150" height="160" fill="#0E172A"/><path d="M382 224 L548 224 L540 210 L390 210 Z" fill="#F7F3EA"/>
+          <g fill="#F0B04E">
+            <rect x="80" y="220" width="22" height="22"/><rect x="124" y="220" width="22" height="22" opacity=".25"/><rect x="168" y="220" width="22" height="22"/>
+            <rect x="80" y="266" width="22" height="22" opacity=".25"/><rect x="124" y="266" width="22" height="22"/><rect x="168" y="266" width="22" height="22"/>
+            <rect x="80" y="312" width="22" height="22"/><rect x="124" y="312" width="22" height="22"/><rect x="168" y="312" width="22" height="22" opacity=".25"/>
+            <rect x="250" y="170" width="22" height="22"/><rect x="289" y="170" width="22" height="22" opacity=".25"/><rect x="328" y="170" width="22" height="22"/>
+            <rect x="250" y="214" width="22" height="22" opacity=".25"/><rect x="289" y="214" width="22" height="22"/><rect x="328" y="214" width="22" height="22"/>
+            <rect x="250" y="258" width="22" height="22"/><rect x="289" y="258" width="22" height="22"/><rect x="328" y="258" width="22" height="22" opacity=".25"/>
+            <rect x="250" y="302" width="22" height="22"/><rect x="289" y="302" width="22" height="22" opacity=".25"/><rect x="328" y="302" width="22" height="22"/>
+            <rect x="410" y="240" width="22" height="22"/><rect x="454" y="240" width="22" height="22"/><rect x="498" y="240" width="22" height="22" opacity=".25"/>
+            <rect x="410" y="286" width="22" height="22" opacity=".25"/><rect x="454" y="286" width="22" height="22"/><rect x="498" y="286" width="22" height="22"/>
+            <rect x="282" y="344" width="36" height="36"/>
+          </g>
+          <line x1="215" y1="380" x2="215" y2="316" stroke="#0A1222" stroke-width="3"/><circle cx="215" cy="312" r="6" fill="#F0B04E"/><circle cx="215" cy="312" r="18" fill="#F0B04E" opacity=".2"/>
+          <path d="M0 380 C120 366 220 374 300 378 C400 386 500 368 600 372 L600 470 L0 470 Z" fill="#EEF2F5"/>
+          <path d="M40 420 C160 410 300 432 440 420 C520 414 570 420 600 424" stroke="#BFD0DC" stroke-width="2" fill="none"/>
+        </svg>
+        </figure>
+        <div class="opt-body">
+          <span class="label opt-num">Option 2</span>
+          <h3 class="disp">A hotel or apartment nearby</h3>
+          <p class="opt-sub">Your own place in Hirafu, at your own budget.</p>
+          <dl class="facts">
+            <div><dt class="label">Who</dt><dd>Just you, your partner, your kids</dd></div>
+            <div><dt class="label">Cost</dt><dd>Whatever you choose. Hirafu has everything from simple to very nice.</dd></div>
+            <div><dt class="label">Nights</dt><dd>As many or as few as you like</dd></div>
+          </dl>
+          <p class="chef">I may end up doing the same once I see the final chalet bill.</p>
+        </div>
+      </article>
     </div>
 
-    <div class="nearby">
-      <h3 class="disp">Or stay nearby.</h3>
-      <div>
-        <p>If you'd rather stay in a hotel or apartment nearby, perfect. There's everything in Hirafu from simple to very nice. Pick whatever works for your budget and join everything.</p>
-        <p class="quiet">I may end up doing the same once I see the final chalet bill.</p>
-      </div>
+    <div class="either">
+      <span class="label either-k">Either way</span>
+      <div><strong>Flights</strong><p>You book your own.</p></div>
+      <div><strong>Birthday dinners</strong><p>On me, for everyone, wherever you sleep.</p></div>
+      <div><strong>Everything else</strong><p>Skiing, onsen, day trips. Join as much as you like.</p></div>
     </div>
   </div>
 </section>
@@ -369,7 +426,7 @@ form{display:flex;flex-direction:column}
         <div class="cap"><div class="name"><h3>Ski</h3><span class="jp">スキー</span></div><p>Some of the best powder on earth. Night skiing too.</p></div>
       </div>
       <div class="tile">
-        <svg viewBox="0 0 200 150" aria-hidden="true"><rect width="200" height="150" fill="#BFD0DC"/><path d="M0 150 L0 100 C50 80 120 70 200 60 L200 150 Z" fill="#F7F3EA"/><g fill="#243C31"><path d="M30 104 L22 70 L14 104 Z"/><path d="M44 100 L36 60 L28 100 Z"/><path d="M160 72 L152 40 L144 72 Z"/><path d="M176 70 L168 34 L160 70 Z"/></g><path d="M70 150 C80 130 120 124 110 104 C104 92 130 86 140 72" stroke="#16243E" stroke-width="3" fill="none" stroke-linecap="round" opacity=".5"/></svg>
+        <svg viewBox="0 0 200 150" aria-hidden="true"><rect width="200" height="150" fill="#BFD0DC"/><path d="M0 150 L0 100 C50 80 120 70 200 60 L200 150 Z" fill="#F7F3EA"/><g fill="#16243E"><path d="M30 104 L22 70 L14 104 Z"/><path d="M44 100 L36 60 L28 100 Z"/><path d="M160 72 L152 40 L144 72 Z"/><path d="M176 70 L168 34 L160 70 Z"/></g><path d="M70 150 C80 130 120 124 110 104 C104 92 130 86 140 72" stroke="#16243E" stroke-width="3" fill="none" stroke-linecap="round" opacity=".5"/></svg>
         <div class="cap"><div class="name"><h3>Snowboard</h3><span class="jp">スノーボード</span></div><p>Trees, bowls, and very deep snow.</p></div>
       </div>
       <div class="tile">
@@ -377,7 +434,7 @@ form{display:flex;flex-direction:column}
         <div class="cap"><div class="name"><h3>Onsen</h3><span class="jp">温泉</span></div><p>Outdoor hot springs, in the snow, facing Yōtei.</p></div>
       </div>
       <div class="tile">
-        <svg viewBox="0 0 200 150" aria-hidden="true"><rect width="200" height="150" fill="#BD2D26"/><ellipse cx="100" cy="74" rx="66" ry="16" fill="#F7F3EA"/><path d="M34 74 C38 120 162 120 166 74 Z" fill="#F7F3EA"/><ellipse cx="100" cy="74" rx="58" ry="11" fill="#E0A247"/><g stroke="#F4D38A" stroke-width="2.4" fill="none"><path d="M60 74 C70 68 80 80 90 72 C100 66 110 80 120 72 C130 66 140 78 146 72"/></g><ellipse cx="80" cy="72" rx="9" ry="6" fill="#F7F3EA"/><ellipse cx="80" cy="72" rx="4" ry="3" fill="#F0B04E"/><rect x="112" y="66" width="18" height="8" fill="#16243E"/><g stroke="#3F2A1B" stroke-width="3" stroke-linecap="round"><line x1="118" y1="70" x2="176" y2="30"/><line x1="126" y1="72" x2="184" y2="36"/></g></svg>
+        <svg viewBox="0 0 200 150" aria-hidden="true"><rect width="200" height="150" fill="#DCE5EC"/><ellipse cx="100" cy="74" rx="66" ry="16" fill="#F7F3EA"/><path d="M34 74 C38 120 162 120 166 74 Z" fill="#F7F3EA"/><ellipse cx="100" cy="74" rx="58" ry="11" fill="#F0B04E"/><g stroke="#F7F3EA" stroke-width="2.4" fill="none"><path d="M60 74 C70 68 80 80 90 72 C100 66 110 80 120 72 C130 66 140 78 146 72"/></g><ellipse cx="80" cy="72" rx="9" ry="6" fill="#F7F3EA"/><ellipse cx="80" cy="72" rx="4" ry="3" fill="#F0B04E"/><rect x="112" y="66" width="18" height="8" fill="#16243E"/><g stroke="#0E172A" stroke-width="3" stroke-linecap="round"><line x1="118" y1="70" x2="176" y2="30"/><line x1="126" y1="72" x2="184" y2="36"/></g></svg>
         <div class="cap"><div class="name"><h3>Ramen</h3><span class="jp">ラーメン</span></div><p>Miso ramen is from here. It shows.</p></div>
       </div>
       <div class="tile">
@@ -385,11 +442,11 @@ form{display:flex;flex-direction:column}
         <div class="cap"><div class="name"><h3>Izakaya</h3><span class="jp">居酒屋</span></div><p>Small plates, skewers, cold beer, loud rooms.</p></div>
       </div>
       <div class="tile">
-        <svg viewBox="0 0 200 150" aria-hidden="true"><rect width="200" height="150" fill="#EFE8D8"/><path d="M84 34 C84 26 96 26 96 34 L96 44 C96 50 118 60 118 86 L118 118 C118 124 62 124 62 118 L62 86 C62 60 84 50 84 44 Z" fill="#16243E"/><rect x="84" y="28" width="12" height="6" fill="#16243E"/><path d="M130 100 L160 100 L156 120 L134 120 Z" fill="#F7F3EA" stroke="#16243E" stroke-width="2"/><ellipse cx="145" cy="101" rx="14" ry="3" fill="#BFD0DC"/><rect x="0" y="122" width="200" height="28" fill="#D9CDB4"/></svg>
+        <svg viewBox="0 0 200 150" aria-hidden="true"><rect width="200" height="150" fill="#DCE5EC"/><path d="M84 34 C84 26 96 26 96 34 L96 44 C96 50 118 60 118 86 L118 118 C118 124 62 124 62 118 L62 86 C62 60 84 50 84 44 Z" fill="#16243E"/><rect x="84" y="28" width="12" height="6" fill="#16243E"/><path d="M130 100 L160 100 L156 120 L134 120 Z" fill="#F7F3EA" stroke="#16243E" stroke-width="2"/><ellipse cx="145" cy="101" rx="14" ry="3" fill="#BFD0DC"/><rect x="0" y="122" width="200" height="28" fill="#BFD0DC"/></svg>
         <div class="cap"><div class="name"><h3>Sake</h3><span class="jp">日本酒</span></div><p>Local breweries. Cold. Plenty.</p></div>
       </div>
       <div class="tile">
-        <svg viewBox="0 0 200 150" aria-hidden="true"><rect width="200" height="150" fill="#F7F3EA"/><circle cx="100" cy="82" r="56" fill="#243C31"/><circle cx="100" cy="82" r="46" fill="#EFE8D8"/><g><rect x="64" y="70" width="26" height="14" rx="6" fill="#F7F3EA"/><rect x="62" y="64" width="30" height="10" rx="5" fill="#E07A4A"/><rect x="98" y="72" width="26" height="14" rx="6" fill="#F7F3EA"/><rect x="96" y="66" width="30" height="10" rx="5" fill="#F0B04E"/><rect x="80" y="94" width="26" height="14" rx="6" fill="#F7F3EA"/><rect x="78" y="88" width="30" height="10" rx="5" fill="#BD2D26"/><rect x="108" y="96" width="18" height="10" rx="4" fill="#16243E"/></g></svg>
+        <svg viewBox="0 0 200 150" aria-hidden="true"><rect width="200" height="150" fill="#16243E"/><circle cx="100" cy="82" r="56" fill="#BFD0DC"/><circle cx="100" cy="82" r="46" fill="#F7F3EA"/><g><rect x="64" y="70" width="26" height="14" rx="6" fill="#F7F3EA"/><rect x="62" y="64" width="30" height="10" rx="5" fill="#BD2D26"/><rect x="98" y="72" width="26" height="14" rx="6" fill="#F7F3EA"/><rect x="96" y="66" width="30" height="10" rx="5" fill="#F0B04E"/><rect x="80" y="94" width="26" height="14" rx="6" fill="#F7F3EA"/><rect x="78" y="88" width="30" height="10" rx="5" fill="#BD2D26"/><rect x="108" y="96" width="18" height="10" rx="4" fill="#16243E"/></g></svg>
         <div class="cap"><div class="name"><h3>Eat</h3><span class="jp">食</span></div><p>Crab, uni, scallops, and absurdly good dairy.</p></div>
       </div>
       <div class="tile">
@@ -405,11 +462,11 @@ form{display:flex;flex-direction:column}
         <div class="cap"><div class="name"><h3>Winter stuff</h3><span class="jp">冬</span></div><p>Snowshoes, snowmobiles, frozen waterfalls.</p></div>
       </div>
       <div class="tile">
-        <svg viewBox="0 0 200 150" aria-hidden="true"><rect width="200" height="150" fill="#EFE8D8"/><path d="M0 116 C60 106 140 110 200 112 L200 150 L0 150 Z" fill="#F7F3EA"/><circle cx="84" cy="100" r="22" fill="#F7F3EA" stroke="#BFD0DC" stroke-width="2"/><circle cx="84" cy="66" r="15" fill="#F7F3EA" stroke="#BFD0DC" stroke-width="2"/><rect x="72" y="46" width="24" height="6" fill="#16243E"/><rect x="76" y="32" width="16" height="16" fill="#16243E"/><path d="M84 68 L96 70 L84 72 Z" fill="#E07A4A"/><circle cx="80" cy="62" r="1.6" fill="#16243E"/><circle cx="89" cy="62" r="1.6" fill="#16243E"/><path d="M70 80 L98 80 L96 86 L72 86 Z" fill="#BD2D26"/><g stroke="#5B3D28" stroke-width="3" fill="none" stroke-linecap="round"><path d="M130 124 L176 124 C182 124 184 118 180 114"/><line x1="138" y1="124" x2="138" y2="114"/><line x1="168" y1="124" x2="168" y2="114"/><line x1="134" y1="114" x2="172" y2="114"/></g></svg>
+        <svg viewBox="0 0 200 150" aria-hidden="true"><rect width="200" height="150" fill="#DCE5EC"/><path d="M0 116 C60 106 140 110 200 112 L200 150 L0 150 Z" fill="#F7F3EA"/><circle cx="84" cy="100" r="22" fill="#F7F3EA" stroke="#BFD0DC" stroke-width="2"/><circle cx="84" cy="66" r="15" fill="#F7F3EA" stroke="#BFD0DC" stroke-width="2"/><rect x="72" y="46" width="24" height="6" fill="#16243E"/><rect x="76" y="32" width="16" height="16" fill="#16243E"/><path d="M84 68 L96 70 L84 72 Z" fill="#BD2D26"/><circle cx="80" cy="62" r="1.6" fill="#16243E"/><circle cx="89" cy="62" r="1.6" fill="#16243E"/><path d="M70 80 L98 80 L96 86 L72 86 Z" fill="#BD2D26"/><g stroke="#16243E" stroke-width="3" fill="none" stroke-linecap="round"><path d="M130 124 L176 124 C182 124 184 118 180 114"/><line x1="138" y1="124" x2="138" y2="114"/><line x1="168" y1="124" x2="168" y2="114"/><line x1="134" y1="114" x2="172" y2="114"/></g></svg>
         <div class="cap"><div class="name"><h3>Kids</h3><span class="jp">子ども</span></div><p>Ski school, sledging, snow deeper than they are.</p></div>
       </div>
       <div class="tile">
-        <svg viewBox="0 0 200 150" aria-hidden="true"><rect width="200" height="150" fill="#5B3D28"/><rect x="30" y="18" width="140" height="104" fill="#22355A"/><g fill="#F7F3EA" opacity=".85"><circle cx="50" cy="30" r="1.8"/><circle cx="80" cy="50" r="1.4"/><circle cx="110" cy="28" r="1.8"/><circle cx="140" cy="60" r="1.4"/><circle cx="60" cy="80" r="1.6"/><circle cx="96" cy="96" r="1.4"/><circle cx="150" cy="100" r="1.8"/><circle cx="124" cy="80" r="1.2"/></g><path d="M30 106 C80 96 120 102 170 98 L170 122 L30 122 Z" fill="#DCE5EC"/><g stroke="#3F2A1B" stroke-width="5" fill="none"><rect x="30" y="18" width="140" height="104"/><line x1="100" y1="18" x2="100" y2="122"/></g><rect x="20" y="122" width="160" height="10" fill="#3F2A1B"/><path d="M124 108 L144 108 L142 122 L126 122 Z" fill="#F7F3EA"/><path d="M144 112 C152 112 152 118 144 118" stroke="#F7F3EA" stroke-width="2" fill="none"/></svg>
+        <svg viewBox="0 0 200 150" aria-hidden="true"><rect width="200" height="150" fill="#16243E"/><rect x="30" y="18" width="140" height="104" fill="#22355A"/><g fill="#F7F3EA" opacity=".85"><circle cx="50" cy="30" r="1.8"/><circle cx="80" cy="50" r="1.4"/><circle cx="110" cy="28" r="1.8"/><circle cx="140" cy="60" r="1.4"/><circle cx="60" cy="80" r="1.6"/><circle cx="96" cy="96" r="1.4"/><circle cx="150" cy="100" r="1.8"/><circle cx="124" cy="80" r="1.2"/></g><path d="M30 106 C80 96 120 102 170 98 L170 122 L30 122 Z" fill="#DCE5EC"/><g stroke="#0E172A" stroke-width="5" fill="none"><rect x="30" y="18" width="140" height="104"/><line x1="100" y1="18" x2="100" y2="122"/></g><rect x="20" y="122" width="160" height="10" fill="#0E172A"/><path d="M124 108 L144 108 L142 122 L126 122 Z" fill="#F7F3EA"/><path d="M144 112 C152 112 152 118 144 118" stroke="#F7F3EA" stroke-width="2" fill="none"/></svg>
         <div class="cap"><div class="name"><h3>Nothing</h3><span class="jp">何もしない</span></div><p>Window. Blanket. Snow.</p></div>
       </div>
     </div>
@@ -495,11 +552,11 @@ form{display:flex;flex-direction:column}
         </fieldset>
 
         <fieldset class="q">
-          <legend>Where would you stay?</legend>
+          <legend>Chalet or hotel?</legend>
           <div class="opts">
-            <label class="pill"><input type="radio" name="stay" value="Main chalet"><span>Main chalet</span></label>
-            <label class="pill"><input type="radio" name="stay" value="Somewhere nearby"><span>Somewhere nearby</span></label>
-            <label class="pill"><input type="radio" name="stay" value="Either"><span>Either</span></label>
+            <label class="pill"><input type="radio" name="stay" value="Main chalet"><span>The chalet</span></label>
+            <label class="pill"><input type="radio" name="stay" value="Somewhere nearby"><span>Hotel or apartment nearby</span></label>
+            <label class="pill"><input type="radio" name="stay" value="Either"><span>Either / not sure</span></label>
           </div>
         </fieldset>
 
