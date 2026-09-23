@@ -111,7 +111,7 @@ section{padding-block:clamp(72px,10vw,136px)}
 /* do */
 .do-head{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;margin-bottom:clamp(32px,5vw,56px)}
 .do-head .aside{margin-top:14px}
-.tiles{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(12px,1.6vw,20px)}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.6vw,20px)}
 .tile{background:var(--snow);display:flex;flex-direction:column;min-width:0}
 .tile svg{display:block;width:100%;height:auto;aspect-ratio:4/3}
 .tile .cap{padding:14px 16px 18px;display:flex;flex-direction:column;gap:4px}
@@ -119,8 +119,7 @@ section{padding-block:clamp(72px,10vw,136px)}
 .tile h3{font-family:var(--display);font-stretch:70%;font-variation-settings:"wdth" 70;font-weight:800;font-size:24px;text-transform:uppercase;line-height:1}
 .tile .jp{font-size:13px;color:var(--ink-soft);white-space:nowrap;flex:0 0 auto}
 .tile p{font-size:15.5px;line-height:1.45;color:var(--ink-soft)}
-@media (max-width:1100px){.tiles{grid-template-columns:repeat(4,1fr)}}
-@media (max-width:860px){.tiles{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:860px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:700px){.tiles{grid-template-columns:repeat(2,1fr)}.do-head{grid-template-columns:1fr}}
 @media (max-width:380px){.tiles{grid-template-columns:1fr}}
 
@@ -164,7 +163,7 @@ section{padding-block:clamp(72px,10vw,136px)}
 /* birthday + week (night) */
 .night{background:var(--night);color:var(--snow)}
 .night .eyebrow{color:var(--ice)}
-.bday-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,96px)}
+.bday-grid{display:grid;grid-template-columns:1fr;gap:clamp(40px,6vw,96px)}
 .bday-grid > *{min-width:0}
 .night .big-copy p{max-width:22em}
 .hit{margin-top:clamp(24px,3vw,34px);font-size:clamp(21px,2.3vw,28px);line-height:1.4;color:var(--snow);font-style:italic;max-width:22em}
@@ -317,7 +316,7 @@ form{display:flex;flex-direction:column}
     <span class="label eyebrow">The plan</span>
     <div class="big-copy">
       <p>I'm turning 35 this year, and in February I want a bunch of people I love in Hokkaido for a week.</p>
-      <p>Friends, partners, kids, families. Ski if you want. Don't if you don't. Eat far too much, sit in hot springs, drink things.</p>
+      <p>Ski if you want. Don't if you don't. Eat far too much, sit in hot springs, drink things.</p>
       <p>The trip is happening. I just need to know which week before I book the house.</p>
     </div>
     <p class="aside">Yes, I just got married. No, this is not the honeymoon. Unless you all come, in which case it's a very strange honeymoon.</p>
@@ -439,12 +438,6 @@ form{display:flex;flex-direction:column}
       </article>
     </div>
 
-    <div class="either">
-      <span class="label either-k">Either way</span>
-      <div><strong>Flights</strong><p>You book your own.</p></div>
-      <div><strong>Birthday dinners</strong><p>On me, for everyone, wherever you sleep.</p></div>
-      <div><strong>Everything else</strong><p>Skiing, onsen, day trips. Join as much as you like.</p></div>
-    </div>
   </div>
 </section>
 
@@ -461,7 +454,7 @@ form{display:flex;flex-direction:column}
     <div class="tiles">
       <div class="tile">
         <svg viewBox="0 0 200 150" aria-hidden="true"><rect width="200" height="150" fill="#16243E"/><circle cx="160" cy="32" r="12" fill="#F7F3EA"/><path d="M0 150 L0 90 C60 70 120 40 200 20 L200 150 Z" fill="#E9EEF2"/><path d="M40 150 C70 120 60 100 100 84 C130 72 120 56 150 44" stroke="#BFD0DC" stroke-width="2" fill="none"/><g fill="#F0B04E"><circle cx="30" cy="84" r="2"/><circle cx="70" cy="70" r="2"/><circle cx="110" cy="54" r="2"/><circle cx="150" cy="38" r="2"/></g><g transform="translate(96 96) rotate(-24)"><rect x="-3" y="-16" width="6" height="14" rx="2" fill="#BD2D26"/><circle cx="0" cy="-20" r="3" fill="#16243E"/><line x1="-12" y1="2" x2="12" y2="2" stroke="#16243E" stroke-width="2"/></g></svg>
-        <div class="cap"><div class="name"><h3>Ski</h3><span class="jp">スキー</span></div><p>Some of the best powder on earth. Night skiing too.</p></div>
+        <div class="cap"><div class="name"><h3>Ski</h3><span class="jp">スキー</span></div><p>Some of the best powder on earth.</p></div>
       </div>
       <div class="tile">
         <svg viewBox="0 0 200 150" aria-hidden="true"><rect width="200" height="150" fill="#BFD0DC"/><path d="M0 150 L0 100 C50 80 120 70 200 60 L200 150 Z" fill="#F7F3EA"/><g fill="#16243E"><path d="M30 104 L22 70 L14 104 Z"/><path d="M44 100 L36 60 L28 100 Z"/><path d="M160 72 L152 40 L144 72 Z"/><path d="M176 70 L168 34 L160 70 Z"/></g><path d="M70 150 C80 130 120 124 110 104 C104 92 130 86 140 72" stroke="#16243E" stroke-width="3" fill="none" stroke-linecap="round" opacity=".5"/></svg>
@@ -475,11 +468,7 @@ form{display:flex;flex-direction:column}
         <svg viewBox="0 0 200 150" aria-hidden="true"><rect width="200" height="150" fill="#DCE5EC"/><ellipse cx="100" cy="74" rx="66" ry="16" fill="#F7F3EA"/><path d="M34 74 C38 120 162 120 166 74 Z" fill="#F7F3EA"/><ellipse cx="100" cy="74" rx="58" ry="11" fill="#F0B04E"/><g stroke="#F7F3EA" stroke-width="2.4" fill="none"><path d="M60 74 C70 68 80 80 90 72 C100 66 110 80 120 72 C130 66 140 78 146 72"/></g><ellipse cx="80" cy="72" rx="9" ry="6" fill="#F7F3EA"/><ellipse cx="80" cy="72" rx="4" ry="3" fill="#F0B04E"/><rect x="112" y="66" width="18" height="8" fill="#16243E"/><g stroke="#0E172A" stroke-width="3" stroke-linecap="round"><line x1="118" y1="70" x2="176" y2="30"/><line x1="126" y1="72" x2="184" y2="36"/></g></svg>
         <div class="cap"><div class="name"><h3>Ramen</h3><span class="jp">ラーメン</span></div><p>Miso ramen was born in Sapporo, two hours away.</p></div>
       </div>
-      <div class="tile">
-        <svg viewBox="0 0 200 150" aria-hidden="true"><rect width="200" height="150" fill="#16243E"/><circle cx="100" cy="72" r="56" fill="#F0B04E" opacity=".18"/><line x1="100" y1="0" x2="100" y2="34" stroke="#0A1222" stroke-width="2"/><rect x="88" y="30" width="24" height="6" fill="#0A1222"/><ellipse cx="100" cy="74" rx="30" ry="40" fill="#BD2D26"/><g stroke="#8E1F1A" stroke-width="1.5" fill="none"><path d="M72 58 Q100 64 128 58"/><path d="M70 74 Q100 80 130 74"/><path d="M72 90 Q100 96 128 90"/></g><rect x="88" y="112" width="24" height="6" fill="#0A1222"/><text x="100" y="80" text-anchor="middle" font-family="Noto Serif JP, serif" font-weight="700" font-size="16" fill="#F7F3EA">酒</text></svg>
-        <div class="cap"><div class="name"><h3>Izakaya</h3><span class="jp">居酒屋</span></div><p>Small plates, skewers, cold beer, loud rooms.</p></div>
-      </div>
-      <div class="tile">
+            <div class="tile">
         <svg viewBox="0 0 200 150" aria-hidden="true"><rect width="200" height="150" fill="#DCE5EC"/><path d="M84 34 C84 26 96 26 96 34 L96 44 C96 50 118 60 118 86 L118 118 C118 124 62 124 62 118 L62 86 C62 60 84 50 84 44 Z" fill="#16243E"/><rect x="84" y="28" width="12" height="6" fill="#16243E"/><path d="M130 100 L160 100 L156 120 L134 120 Z" fill="#F7F3EA" stroke="#16243E" stroke-width="2"/><ellipse cx="145" cy="101" rx="14" ry="3" fill="#BFD0DC"/><rect x="0" y="122" width="200" height="28" fill="#BFD0DC"/></svg>
         <div class="cap"><div class="name"><h3>Sake</h3><span class="jp">日本酒</span></div><p>Local breweries. Cold. Plenty.</p></div>
       </div>
@@ -670,17 +659,7 @@ form{display:flex;flex-direction:column}
         </div>
         <p class="hit">You book your flight and wherever you sleep. Birthday dinners are on me. I'm not a complete cunt.</p>
       </div>
-      <div>
-        <span class="label eyebrow">A rough day</span>
-        <ol class="day">
-          <li><time>08:00</time><span>Breakfast</span></li>
-          <li><time>09:00</time><span>Skiing, or whatever</span></li>
-          <li><time>12:30</time><span>Ramen</span></li>
-          <li><time>14:00</time><span>Ski, onsen, nap, or a drink</span></li>
-          <li><time>19:30</time><span>Dinner</span></li>
-          <li><time>22:00</time><span>Drinks</span></li>
-        </ol>
-      </div>
+
     </div>
   </div>
 </section>
@@ -690,8 +669,8 @@ form{display:flex;flex-direction:column}
     <span class="label eyebrow">Who</span>
     <h2 class="disp h2">Friends, partners, kids, families.</h2>
     <div class="big-copy">
-      <p>I want a load of people I love in the same place for a week. Friends from completely different parts of my life, their partners, their kids.</p>
-      <p>Come ski. Don't ski. Come for three days or all seven. I don't really care how you do it. I just want you there.</p>
+      <p>Friends from completely different parts of my life, their partners, their kids.</p>
+      <p>Come for three days or all seven. I don't really care how you do it. I just want you there.</p>
     </div>
     <p class="sign">If I sent you this, I mean you.</p>
     <p class="steve">Steve, if you don't come to this, we're not friends anymore.</p>
@@ -801,14 +780,12 @@ form{display:flex;flex-direction:column}
     <h2 class="disp h2">Short answers.</h2>
     <dl class="faq">
       <div><dt>Is this happening?</dt><dd>Yes.</dd></div>
-      <div><dt>Which week?</dt><dd>That is literally what I'm asking you.</dd></div>
+      <div><dt>Which week?</dt><dd>That is literally what I'm asking you. Answers by the first week of October, then I book.</dd></div>
       <div><dt>Do I have to ski?</dt><dd>No.</dd></div>
-      <div><dt>Can I bring my kids?</dt><dd>Very welcome. For the chalet, kids from about 5 count as a guest because they need their own bed.</dd></div>
+      <div><dt>Can I bring my kids?</dt><dd>Very welcome.</dd></div>
       <div><dt>Can I bring my partner?</dt><dd>Obviously.</dd></div>
       <div><dt>Can I come for part of it?</dt><dd>Of course.</dd></div>
-      <div><dt>How much?</dt><dd>The main chalet currently looks like roughly $2,500 per person for the week. Hotels nearby vary a lot.</dd></div>
-      <div><dt>Who books the chalet?</dt><dd>I do, and I take care of it. We sort out who pays what in October, once we know who's in.</dd></div>
-      <div><dt>When will we know the week?</dt><dd>I need answers by the first week of October. I'll confirm the week and the chalet in October.</dd></div>
+      <div><dt>How much?</dt><dd>Chalet: roughly $2,500 each for the week. Hotels nearby: your call.</dd></div>
       <div><dt>Flights?</dt><dd>You book your own. Fly into Sapporo (New Chitose), then about two hours by road.</dd></div>
       <div><dt>Private chef?</dt><dd>Not confirmed. Regrettably, discovered.</dd></div>
       <div><dt>Why Hokkaido?</dt><dd>Snow, onsen, food. And I've wanted an excuse for years.</dd></div>
