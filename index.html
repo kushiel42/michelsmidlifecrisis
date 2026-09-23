@@ -217,7 +217,6 @@ form{display:flex;flex-direction:column}
     <p class="where"><span class="label">Niseko / Hirafu</span><span class="jp">北海道</span></p>
     <h1 class="disp"><span>I'm turning 35.</span><span>Come to Hokkaido.</span></h1>
     <p class="dates">First or second week of February.</p>
-    <p class="kill">A birthday dinner was briefly considered.</p>
     <div class="cta">
       <a class="btn red" href="#which-week">Tell me which week</a>
       <a class="btn ghost" href="#plan">The plan</a>
@@ -583,7 +582,7 @@ form{display:flex;flex-direction:column}
           <span class="qlabel">You</span>
           <div class="row">
             <div class="field"><label class="label" for="name">Name</label><input id="name" name="name" type="text" autocomplete="name"></div>
-            <div class="field"><label class="label" for="contact">WhatsApp or email</label><input id="contact" name="contact" type="text" autocomplete="email"></div>
+            <div class="field"><label class="label" for="contact">WhatsApp number</label><input id="contact" name="contact" type="tel" inputmode="tel" autocomplete="tel" placeholder="Include the country code"></div>
           </div>
           <div class="field" style="margin-top:16px"><label class="label" for="notes">Anything else (optional)</label><textarea id="notes" name="notes" placeholder="Food stuff, questions…"></textarea></div>
         </div>
@@ -598,7 +597,6 @@ form{display:flex;flex-direction:column}
         <p id="doneText">This page can't send anything by itself, so tap below and it goes to me on WhatsApp.</p>
         <div class="acts">
           <a class="btn red" id="wa" href="#" target="_blank" rel="noopener">Send on WhatsApp</a>
-          <a class="btn" id="mail" href="#" target="_blank" rel="noopener" hidden>Send by email</a>
           <button class="btn" type="button" id="copy">Copy</button>
           <button class="btn" type="button" id="edit">Edit answers</button>
         </div>
@@ -617,8 +615,8 @@ form{display:flex;flex-direction:column}
       <div><dt>Is this happening?</dt><dd>Yes.</dd></div>
       <div><dt>Which week?</dt><dd>That is literally what I'm asking you.</dd></div>
       <div><dt>Do I have to ski?</dt><dd>No.</dd></div>
-      <div><dt>Kids?</dt><dd>Very welcome. For the chalet, kids from about 5 count as a guest because they need their own bed.</dd></div>
-      <div><dt>My partner?</dt><dd>Obviously.</dd></div>
+      <div><dt>Can I bring my kids?</dt><dd>Very welcome. For the chalet, kids from about 5 count as a guest because they need their own bed.</dd></div>
+      <div><dt>Can I bring my partner?</dt><dd>Obviously.</dd></div>
       <div><dt>Can I come for part of it?</dt><dd>Of course.</dd></div>
       <div><dt>How much?</dt><dd>The main chalet currently looks like roughly $2,500 per person for the week. Hotels nearby vary a lot.</dd></div>
       <div><dt>Who books the chalet?</dt><dd>I do, and I take care of it. We sort out who pays what in October, once we know who's in.</dd></div>
@@ -642,9 +640,8 @@ form{display:flex;flex-direction:column}
 </footer>
 
 <script>
-/* Where answers go. Add Michel's WhatsApp number (digits with country code) and/or email. */
+/* Where answers go. Add Michel's WhatsApp number (digits, with country code). */
 const MICHEL_WHATSAPP = "";
-const MICHEL_EMAIL = "";
 const POSTER_URL = "/poster.png";
 const RSVP_ENDPOINT = "https://hooks.airtable.com/workflows/v1/genericWebhook/app9IryaHzloZHcJA/wflV7vYsEcSQpuMHQ/wtrRf4SY2Av7b4LCV";
 
@@ -698,7 +695,7 @@ const RSVP_ENDPOINT = "https://hooks.airtable.com/workflows/v1/genericWebhook/ap
     if (!o.week) miss.push(form.querySelector('[data-req="week"]'));
     if (!o.likely) miss.push(form.querySelector('[data-req="likely"]'));
     if (!o.name || !o.contact) miss.push(form.querySelector('[data-req="who"]'));
-    if (miss.length) { miss.forEach(q => q.classList.add("bad")); err.textContent = "Need at least the week, how likely, your name and how to reach you."; miss[0].scrollIntoView({behavior: reduce ? "auto" : "smooth", block: "center"}); return; }
+    if (miss.length) { miss.forEach(q => q.classList.add("bad")); err.textContent = "Need at least the week, how likely, your name and a WhatsApp number."; miss[0].scrollIntoView({behavior: reduce ? "auto" : "smooth", block: "center"}); return; }
     err.textContent = "";
     const btn = form.querySelector('button[type="submit"]'); btn.disabled = true; btn.textContent = "Sending…";
     let sent = false;
@@ -720,14 +717,11 @@ const RSVP_ENDPOINT = "https://hooks.airtable.com/workflows/v1/genericWebhook/ap
     document.getElementById("doneTitle").textContent = "Last step."; document.getElementById("doneText").textContent = "That didn't go through from here, so tap below and it goes to me on WhatsApp.";
     const t = text(o);
     document.getElementById("wa").href = "https://wa.me/" + MICHEL_WHATSAPP.replace(/\D/g,"") + "?text=" + encodeURIComponent(t);
-    const m = document.getElementById("mail");
-    if (MICHEL_EMAIL) { m.hidden = false; m.href = "mailto:" + MICHEL_EMAIL + "?subject=" + encodeURIComponent("Hokkaido — " + o.name) + "&body=" + encodeURIComponent(t); }
     done.dataset.text = t; form.hidden = true; done.hidden = false;
     done.scrollIntoView({behavior: reduce ? "auto" : "smooth", block: "center"});
   });
   function thanks(){ document.getElementById("doneTitle").textContent = "Thanks."; document.getElementById("doneText").textContent = "I'll update everyone once I know the week."; }
   document.getElementById("wa").addEventListener("click", thanks);
-  document.getElementById("mail").addEventListener("click", thanks);
   document.getElementById("edit").addEventListener("click", () => { done.hidden = true; form.hidden = false; form.scrollIntoView({block:"start"}); });
   document.getElementById("copy").addEventListener("click", async () => {
     const t = done.dataset.text || "", toast = document.getElementById("toast");
